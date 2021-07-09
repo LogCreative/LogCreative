@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{left=1.0cm,right=1.0cm,top=0cm,bottom=1.0cm}
+\newenvironment{cvitems}{
+    \begin{justify}
+    \begin{description}[
+        labelwidth=1.8cm,
+        leftmargin=2cm,
+        % labelsep=0.5cm,
+        parsep=0pt]
+}{
+    \end{description}
+    \end{justify}
+}
+
+\renewcommand\descriptionlabel[1]{\sffamily #1}
+
+\def\section#1{
+    \noindent\hskip2cm \textbf{\large #1} \hrulefill
+}
+
+\def\rightnote#1{
+    \hfill\textcolor{gray}{\emph{#1}}
+}
+
+\title{\textbf{李子龙}}
+\author{Log Creative}
+\date{}
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    
+    % 教育经历
+    \section{教育经历}
+    \begin{cvitems}
+        \item[本科生] \textbf{上海交通大学} 二年级 \rightnote{上海}
+        
+        数学科学学院~数学与应用数学\rightnote{2018--2019}
+
+        电子信息与电气工程学院~计算机科学与技术\rightnote{预计 2019--2023}
+    \end{cvitems}
+
+    % 技能
+    \section{编程项目}
+    \begin{cvitems}
+        \item[C/C++] \rightnote{2017--2021}
+        \item[VB{\small .NET}/C\#] \rightnote{2014--2020}
+        \item[\LaTeX]  \rightnote{2018--2021}
+        \item[JavaScript] 
+    \end{cvitems}
+
+    % 竞赛经历
+
+    % 社团经历
+
+\end{document}
