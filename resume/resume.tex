@@ -39,7 +39,10 @@
 }
 
 \def\rightnote#1{
-    \hfill\textcolor{gray}{\emph{#1}}
+    {%
+    \unskip\nobreak\hfil\penalty50
+    \hskip2em\hbox{}\nobreak\hfil\textcolor{gray}{\emph{#1}}%
+    \parfillskip=0pt \finalhyphendemerits=0 \par}
 }
 
 \title{\textbf{李子龙}}
@@ -57,6 +60,10 @@
         数学科学学院~数学与应用数学\rightnote{2018--2019}
 
         电子信息与电气工程学院~计算机科学与技术\rightnote{预计 2019--2023}
+    
+        核心学积分：86.3/100
+        
+        A/A+专业课：计算机科学中的数学基础、编译原理、计算机系统结构实验。
     \end{cvitems}
 
     % 技能
@@ -79,7 +86,7 @@
         
         \begin{githubs}
             \item \githublink{SJTUBeamermin} 个人维护的 \textsf{beamer} 幻灯片模板。\faStar\textsf{~53} \rightnote{2021}
-            \item \githublink{LaTeXSparkle} 使用 \textsf{HTML5+CSS+JavaScript} 编写的关于 \LaTeX 的博客。\rightnote{2020--2021}
+            \item \githublink{LaTeXSparkle} 使用 \textsf{HTML5+CSS+JavaScript} 编写的关于 \LaTeX{} 的博客。\rightnote{2020--2021}
         \end{githubs}
 
         \item[Python] 了解如何使用 \textsf{pandas} 进行数据处理、\textsf{matplotlib} 可视化以及 \textsf{keras} 机器学习。 \rightnote{2020--2021}
