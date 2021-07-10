@@ -3,6 +3,7 @@
 \usepackage{enumitem}
 \usepackage{ragged2e}
 \usepackage{xcolor}
+\usepackage{graphicx}
 \usepackage{fontawesome}
 \usepackage[colorlinks]{hyperref}
 \usepackage{geometry}
@@ -45,8 +46,14 @@
     \parfillskip=0pt \finalhyphendemerits=0 \par}
 }
 
-\title{\textbf{李子龙}}
-\author{Log Creative}
+\def\tip#1{
+    \emph{#1}~\vrule~
+}
+
+\title{\sffamily Log Creative}
+\author{\small\sffamily \faGithub~\href{https://github.com/LogCreative}{LogCreative}
+\includegraphics[height=2ex]{bilibili.png}~\href{https://space.bilibili.com/31271993}{LogCreative}
+\faWechat~{LogCreative}}
 \date{}
 \begin{document}
     \maketitle
@@ -75,10 +82,10 @@
             \item \githublink{GraphGenDecomp} 图生成与分解器：使用了 \textsf{FLTK} 界面库与启发式算法。 \rightnote{C++ 2020}
         \end{githubs}
 
-        \item[VB{\scriptsize .NET}/C\#] 熟悉使用 \textsf{.NET Framework} 框架构造 Windows 应用程序。 \rightnote{2014--2020}
+        \item[VB{\scriptsize .NET}/C\#] 熟悉使用 \textsf{.NET Framework} 框架构造 Windows 应用程序，使用 \textsf{Unity} 编写三维交互程序。 \rightnote{2014--2020}
         
         \begin{githubs}
-            \item \href{https://github.com/SJTU-Art-Center/ACLiveConsole}{\sffamily ACLiveConsole} 多路直播管理软件，界面化管理 Nginx，支持对 bilibili 弹幕进行艺术处理与多路视频的导播平滑切换。\rightnote{C\# 2019--2020}
+            \item \href{https://github.com/SJTU-Art-Center/ACLiveConsole}{\sffamily ACLiveConsole} 多路直播管理软件，界面化管理 Nginx，支持对 bilibili 弹幕进行艺术处理与多路视频的导播平滑切换。服务于多场校级晚会与商业活动。\rightnote{C\# 2019--2020}
             \item \githublink{DialogCreator} 一个界面化的对话框生成器，支持多框弹出的艺术效果。 \rightnote{VB{\scriptsize .NET} 2014--2015}
         \end{githubs}
 
@@ -89,7 +96,7 @@
             \item \githublink{LaTeXSparkle} 使用 \textsf{HTML5+CSS+JavaScript} 编写的关于 \LaTeX{} 的博客。\rightnote{2020--2021}
         \end{githubs}
 
-        \item[Python] 了解如何使用 \textsf{pandas} 进行数据处理、\textsf{matplotlib} 可视化以及 \textsf{keras} 机器学习。 \rightnote{2020--2021}
+        \item[Python] 了解如何使用 \textsf{pandas} 进行数据处理、\textsf{matplotlib} 可视化以及 \textsf{sklearn} 机器学习。 \rightnote{2020--2021}
         
         \begin{githubs}
             \item \githublink{AlgAndComplexity} 算法与复杂性大作业使用 \textsf{Gurobi} 求解器进行任务级数据中心调度。\rightnote{2021}
@@ -113,7 +120,22 @@
     \end{cvitems}
 
     % 竞赛经历
+    \section{获得荣誉}
+
+    \begin{cvitems}
+        \item \textbf{美国大学生数学建模竞赛} 一等奖 \rightnote{2021}
+            \tip{主要贡献} 使用 \textsf{sklearn} 库对 DBSCAN 无监督学习模型的距离重定义，以更好地对森林着火点的范围进行预测。使用 Mathematica 进行地理相关的计算。
+        \item \textbf{全国大学生物联网竞赛} 全国二等奖 \rightnote{2020}
+            \tip{主要贡献} 使用前端技术编写餐厅就餐数据的展示网页，将 Nigara 与华为云数据库连接以更好地基于历史数据进行预测。
+        \item \textbf{上海交通大学优秀奖学金} C 等 \rightnote{2018--2019}
+    \end{cvitems}
 
     % 社团经历
+    \section{社团经历}
+
+    \begin{cvitems}
+        \item \textbf{交大艺术中心} 技术部部长 \rightnote{2019--2020}
+        \tip{相关能力} 熟练地使用 Premiere 视频剪辑，使用 After Effects 制作特效，使用 Cinema 4D 三维建模。
+    \end{cvitems}
 
 \end{document}
