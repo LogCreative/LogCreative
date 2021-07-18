@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Creative</title>
+</head>
+<style>
+    body{
+        font-family: Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        min-height: 100vh;
+    }
+
+    #notice{
+        background-color: yellow;
+        width: 100%;
+        text-align: center;
+        padding: 1em;
+        background-image: linear-gradient(
+            -45deg,
+            rgba(0,0,0,1) 0, rgba(0,0,0,1) 25%, transparent 25%, transparent 50%,
+            rgba(0,0,0,1) 50%, rgba(0,0,0,1) 75%, transparent 75%, transparent 100%
+        );
+        background-size: 75px 75px;
+        animation: shift 1s infinite linear;
+    }
+
+    #line {
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    @keyframes shift {
+        from {
+            background-position-x: 0px;
+        }
+        to {
+            background-position-x: -75px;
+        }
+    }
+</style>
+<body>
+    <div id="notice">
+        <p>Log Creative · 2021</p>
+        <p id="line">Under Construction</p>
+    </div>
+</body>
+</html>
