@@ -10,16 +10,19 @@
     body{
         font-family: Helvetica, sans-serif;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: stretch;
+        justify-content: space-between;
         min-height: 100vh;
+        padding: 0px;
+        margin: 0px;
     }
 
     #notice{
         background-color: yellow;
         width: 100%;
         text-align: center;
-        padding: 1em;
+        padding: 0px;
         background-image: linear-gradient(
             -45deg,
             rgba(0,0,0,1) 0, rgba(0,0,0,1) 25%, transparent 25%, transparent 50%,
@@ -27,6 +30,7 @@
         );
         background-size: 75px 75px;
         animation: shift 1s infinite linear;
+        margin: 0px;
     }
 
     #line {
@@ -42,11 +46,51 @@
             background-position-x: -75px;
         }
     }
+
+    #calendar{
+        margin-bottom: 8px;
+    }
+
+    .day {
+        display: inline-block;
+        padding: 6px;
+        border-radius: 5px;
+        color: rgba(128, 128, 128, 0.5);
+        background: whitesmoke;
+        box-shadow: inset 1px 1px 2px #bebebe,
+                    inset -1px -1px 2px #ffffff;
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .complete, .day:hover {
+        color: grey;
+        background: whitesmoke;
+        box-shadow:  1px 1px 2px #bebebe,
+                    -1px -1px 2px #ffffff;
+    }
 </style>
 <body>
+    <div></div>
     <div id="notice">
         <p>Log Creative · 2021</p>
         <p id="line">Under Construction</p>
+    </div>
+    <div id="calendar">
+        <div class="day complete">19</div>
+        <div class="day">20</div>
+        <div class="day">21</div>
+        <div class="day">22</div>
+        <div class="day">23</div>
+        <div class="day">24</div>
+        <div class="day">25</div>
+        <div class="day">26</div>
+        <div class="day">27</div>
+        <div class="day">28</div>
+        <div class="day">29</div>
+        <div class="day">30</div>
+        <div class="day">31</div>
+        <div class="day">Phase 1 Release</div>
     </div>
 </body>
 </html>
