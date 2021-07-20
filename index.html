@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Creative</title>
+</head>
+<style>
+    body{
+        font-family: Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 100vh;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #notice{
+        background-color: yellow;
+        width: 100%;
+        text-align: center;
+        padding: 0px;
+        background-image: linear-gradient(
+            -45deg,
+            rgba(0,0,0,1) 0, rgba(0,0,0,1) 25%, transparent 25%, transparent 50%,
+            rgba(0,0,0,1) 50%, rgba(0,0,0,1) 75%, transparent 75%, transparent 100%
+        );
+        background-size: 75px 75px;
+        animation: shift 1s infinite linear;
+        margin: 0px;
+    }
+
+    #line {
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    @keyframes shift {
+        from {
+            background-position-x: 0px;
+        }
+        to {
+            background-position-x: -75px;
+        }
+    }
+
+    #calendar{
+        margin-bottom: 8px;
+    }
+
+    .day {
+        display: inline-block;
+        padding: 6px;
+        border-radius: 5px;
+        color: rgba(128, 128, 128, 0.5);
+        background: whitesmoke;
+        box-shadow: inset 1px 1px 2px #bebebe,
+                    inset -1px -1px 2px #ffffff;
+        font-size: small;
+        font-weight: bold;
+        margin: 0px 2px;
+    }
+
+    .complete, .day:hover {
+        color: grey;
+        background: whitesmoke;
+        box-shadow:  1px 1px 2px #bebebe,
+                    -1px -1px 2px #ffffff;
+    }
+</style>
+<body>
+    <div></div>
+    <div id="notice">
+        <p>Log Creative · 2021</p>
+        <p id="line">Under Construction</p>
+    </div>
+    <div id="calendar">
+    </div>
+    </body>
+    <script>
+        var start = 19;
+        var pass = (new Date()).getDate();
+        var end = 31;
+        var notice = "Phase 1 Release";
+        var cal = document.getElementById('calendar');
+        for (var i = start; i <= end + 1; ++i) {
+            var d = document.createElement('div');
+            d.className = 'day';
+            if (i <= pass) d.className += ' complete';
+            d.innerHTML = i <= end ? String(i) : notice;
+            cal.appendChild(d);
+        }
+    </script>
+</html>
