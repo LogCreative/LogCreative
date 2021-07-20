@@ -61,6 +61,7 @@
                     inset -1px -1px 2px #ffffff;
         font-size: small;
         font-weight: bold;
+        margin: 0px 2px;
     }
 
     .complete, .day:hover {
@@ -77,20 +78,20 @@
         <p id="line">Under Construction</p>
     </div>
     <div id="calendar">
-        <div class="day complete">19</div>
-        <div class="day">20</div>
-        <div class="day">21</div>
-        <div class="day">22</div>
-        <div class="day">23</div>
-        <div class="day">24</div>
-        <div class="day">25</div>
-        <div class="day">26</div>
-        <div class="day">27</div>
-        <div class="day">28</div>
-        <div class="day">29</div>
-        <div class="day">30</div>
-        <div class="day">31</div>
-        <div class="day">Phase 1 Release</div>
     </div>
-</body>
+    </body>
+    <script>
+        var start = 19;
+        var pass = (new Date()).getDate();
+        var end = 31;
+        var notice = "Phase 1 Release";
+        var cal = document.getElementById('calendar');
+        for (var i = start; i <= end + 1; ++i) {
+            var d = document.createElement('div');
+            d.className = 'day';
+            if (i <= pass) d.className += ' complete';
+            d.innerHTML = i <= end ? String(i) : notice;
+            cal.appendChild(d);
+        }
+    </script>
 </html>
