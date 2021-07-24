@@ -24,13 +24,16 @@
         \tikzstyle{content} = [note, xshift=4cm, yshift=0.5cm];
         \tikzstyle{noteline} = [black!10];
         \tikzstyle{detail} = [xshift=0.5cm,yshift=-0.2cm];
+        \tikzstyle{live} = [font=\bfseries];
+
         \calendar (cal) [
             dates=2021-07-19 to 2021-09-10, 
             week list, 
             month label above centered
         ]   if (Saturday, Sunday) [red]
             if (at most=\year-\month-\day) [black!30]
-            if (equals=\year-\month-\day) [blue];
+            if (equals=\year-\month-\day) [blue]
+            if (equals=2021-07-23) [live];
         \node [above of=cal-2021-07-22, node distance=0.8cm] {\emph{2021}};
 
         \node [below of=cal-2021-07-31,note] (p1n) {Phase 1};
@@ -43,7 +46,7 @@
     
     大部分工作在开学前进行，所有工作的完成不得迟于 10 月。
 
-    \textbf{预计开播于 7 月 23 日（五）}。此后每周工作日三个上午 9:00 -- 11:00 直播，视外界环境情形可能会有日程变动。
+    \textbf{开播于 7 月 23 日（五）}。此后每周工作日三个上午 9:00 -- 11:00 直播，但是仅每周五会介绍关于该项目的新任务，视外界环境情形可能会有日程变动。
 
     \clearpage
 \section{项目定位}
@@ -93,7 +96,7 @@
 \subsection*{正在进行的准备}
     修改 \href{https://gitee.com/LogCreative/obs-auto-subtitle}{obs-auto-subtitle} 项目，以更好地适配华为云自动识别。
 
-    需要自动生成 token 的工具，可以用前端写一个，（OBS 编译太麻烦了，改的头秃）。
+    需要自动生成 token 的工具，可以用前端写一个，（OBS 编译太麻烦了，改的头秃）。但是发现前端有跨域访问的限制，在这一点上可能使用内嵌工具会更加方便些，至少生成了一个可用的版本。
 
     \noindent\begin{tikzpicture}
         \tikzstyle{arrow}=[->];
@@ -119,13 +122,12 @@
         \draw [arrow]  (v5) edge (v9);
     \end{tikzpicture}
 
+\section{目前进度}
 
-    % 对内核项定名：NeuCV = Neumorphism + CV (Curriculum Vitae)
-    % 创建新的存储库
-    % 使用 WTFPL 授权
+    对内核项定名：NeuCV = Neumorphism + CV (Curriculum Vitae)，创建新的存储库，使用 WTFPL 授权。
 
-    % 视觉风格、总框架：渐变、拟物
-    % Intro Page UI: 环状发散、剪切路径
+    视觉风格、总框架：渐变、拟物
+    Intro Page UI: 环状发散、剪切路径
 
 % Reference: 前端开发路线（我都不是特别会）
 % 1. 网络
