@@ -8,7 +8,6 @@
 </head>
 <style>
     body{
-        font-family: Helvetica, sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -51,6 +50,10 @@
         margin-bottom: 8px;
     }
 
+    #notice, #calendar {
+        font-family: Helvetica, sans-serif;
+    }
+
     .day {
         display: inline-block;
         padding: 6px;
@@ -62,6 +65,7 @@
         font-size: small;
         font-weight: bold;
         margin: 0px 2px;
+        cursor: pointer;
     }
 
     .complete, .day:hover {
@@ -70,9 +74,29 @@
         box-shadow:  1px 1px 2px #bebebe,
                     -1px -1px 2px #ffffff;
     }
+
+    #schedule {
+        /* display: none; */
+        width: 100%;
+        height: 50vh;
+        background: whitesmoke;
+        box-shadow: inset 3px 3px 6px #bebebe,
+                    inset -3px -3px 6px #ffffff;
+        /* padding: 1em 2em; */
+        display: flex;
+    }
+
+    .card {
+        padding: 1em 2em;
+    }
+
+    h1, h2, h3{
+        font-weight: lighter;
+    }
+
 </style>
 <body>
-    <div></div>
+    <div id="header"></div>
     <div id="notice">
         <p>Log Creative · 2021</p>
         <p id="line">Under Construction</p>
@@ -80,8 +104,31 @@
     <div id="calendar">
         <a href="https://logcreative.github.io/LogCreative/dev/dev.pdf"><div class="day">Dev Log</div></a>
     </div>
+    <div id="schedule">
+        <div class="day complete card" id="note-23">
+            <h1>像模像样 LaTeX</h1>
+            <h2>7 月 23 日 9:00 - 11:00</h2>
+            <h3>录制 第一节 前言</h3>
+        </div>
+        <div class="day complete card" id="note-26">
+            <h1>像模像样 LaTeX</h1>
+            <h2>7 月 26 日 9:00 - 11:00</h2>
+            <h3>录制 第一节 前言</h3>
+        </div>
+    </div>
     </body>
     <script>
+        var details = function(e) {
+            var selected = parseInt(e.target.innerHTML);
+            var schedule = document.getElementById('schedule');
+            var cards = schedule.querySelectorAll("div");
+            var elnum = cards.length;
+            for (var i = 0; i < elnum; ++i)
+                cards[i].style.display = 'none';
+            if ((s = schedule.querySelector('#note-' + String(selected))))
+                s.style.display = 'block';
+        }
+        
         var start = 19;
         var pass = (new Date()).getDate();
         var end = 31;
@@ -92,7 +139,9 @@
             d.className = 'day';
             if (i <= pass) d.className += ' complete';
             d.innerHTML = i <= end ? String(i) : notice;
+            d.addEventListener("click", details);
             cal.appendChild(d);
         }
+        
     </script>
 </html>
