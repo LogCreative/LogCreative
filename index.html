@@ -66,6 +66,7 @@
         font-weight: bold;
         margin: 0px 2px;
         cursor: pointer;
+        transition:  1s;
     }
 
     .complete, .day:hover {
@@ -75,23 +76,39 @@
                     -1px -1px 2px #ffffff;
     }
 
+    .sched {
+        border: 1px solid rgba(109, 109, 109, 0.5);
+    }
+
     #schedule {
-        /* display: none; */
+        display: none;
         width: 100%;
         height: 50vh;
-        background: whitesmoke;
-        box-shadow: inset 3px 3px 6px #bebebe,
-                    inset -3px -3px 6px #ffffff;
-        /* padding: 1em 2em; */
-        display: flex;
+        background: linear-gradient(145deg, #cacaca, #f0f0f0);
+        background: #e0e0e0;
+        box-shadow: inset 20px 20px 60px #bebebe,
+            inset -20px -20px 60px #ffffff;
     }
 
     .card {
         padding: 1em 2em;
+        background: #e0e0e0;
+        box-shadow:  20px 20px 60px #bebebe,
+                    -20px -20px 60px #ffffff;
+        width: 100%;
+        transition: 1s;
+        cursor: default;
+        color: black
     }
 
     h1, h2, h3{
         font-weight: lighter;
+    }
+    h2{
+        font-size: medium;
+    }
+    h3{
+        font-size: small;
     }
 
 </style>
@@ -106,14 +123,25 @@
     </div>
     <div id="schedule">
         <div class="day complete card" id="note-23">
-            <h1>像模像样 LaTeX</h1>
+            <h1><embed src="img/frontendlogo.svg"></h1>
             <h2>7 月 23 日 9:00 - 11:00</h2>
-            <h3>录制 第一节 前言</h3>
+            <h3>0 一些闲话</h3>
+            <p class="page">一个链接</p>
         </div>
         <div class="day complete card" id="note-26">
-            <h1>像模像样 LaTeX</h1>
+            <h1><embed src="img/cnflogo.svg"></h1>
             <h2>7 月 26 日 9:00 - 11:00</h2>
             <h3>录制 第一节 前言</h3>
+        </div>
+        <div class="day complete card" id="note-28">
+            <h1><embed src="img/cnflogo.svg"></h1>
+            <h2>7 月 28 日 9:00 - 11:00</h2>
+            <h3>制作 第一节 前言</h3>
+        </div>
+        <div class="day complete card" id="note-30">
+            <h1><embed src="img/frontendlogo.svg"></h1>
+            <h2>7 月 30 日 9:00 - 11:00</h2>
+            <h3>1 搭起框架</h3>
         </div>
     </div>
     </body>
@@ -125,8 +153,10 @@
             var elnum = cards.length;
             for (var i = 0; i < elnum; ++i)
                 cards[i].style.display = 'none';
-            if ((s = schedule.querySelector('#note-' + String(selected))))
+            if ((s = schedule.querySelector('#note-' + String(selected)))){
                 s.style.display = 'block';
+                schedule.style.display = 'flex';
+            }
         }
         
         var start = 19;
@@ -140,6 +170,8 @@
             if (i <= pass) d.className += ' complete';
             d.innerHTML = i <= end ? String(i) : notice;
             d.addEventListener("click", details);
+            if(document.querySelector("#schedule #note-"+i))
+                d.className += ' sched';
             cal.appendChild(d);
         }
         
