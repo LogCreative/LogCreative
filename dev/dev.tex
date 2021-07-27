@@ -34,7 +34,8 @@
         ]   if (Saturday, Sunday) [red]
             if (at most=\year-\month-\day) [black!30]
             if (equals=\year-\month-\day) [blue]
-            if (equals=2021-07-23) [live];
+            if (equals=2021-07-23) [live]
+            if (equals=2021-07-26) [live];
         \node [above of=cal-2021-07-22, node distance=0.8cm] {\emph{2021}};
 
         \node [below of=cal-2021-07-31,note] (p1n) {Phase 1};
@@ -95,6 +96,9 @@
     \end{figure}
 
 \subsection*{正在进行的准备}
+
+    在制作个人主页的同时，也会在制作过程中寻找需求，做一些其他的小工具，以更好地练习编程技能。
+
     修改 \href{https://gitee.com/LogCreative/obs-auto-subtitle}{obs-auto-subtitle} 项目，以更好地适配华为云自动识别。
 
     需要自动生成 token 的工具，可以用前端写一个，（OBS 编译太麻烦了，改的头秃）。但是发现前端有跨域访问的限制，在这一点上可能使用内嵌工具会更加方便些，至少生成了一个可用的版本。
@@ -123,14 +127,17 @@
         \draw [arrow]  (v5) edge (v9);
     \end{tikzpicture}
 
+    构造 \href{https://github.com/LogCreative/manim-subtitler}{manim-subtitler} 项目，以更好地向视频中添加 \LaTeX{} 字幕。
+
 \section{目前进度}
 
     对内核项定名：NeuCV = Neumorphism + CV (Curriculum Vitae)，创建新的存储库，使用 WTFPL 授权。
 
     视觉风格、总框架：渐变、拟物
+
     Intro Page UI: 环状发散、剪切路径
 
-    \faYoutubePlay\href{https://www.bilibili.com/video/BV1Lh411z7tZ/}{直播集锦}
+    \faYoutubePlay~\href{https://www.bilibili.com/video/BV1Lh411z7tZ/}{直播集锦}
 
     % 像模像样 LaTeX 第一节
     % 录制
