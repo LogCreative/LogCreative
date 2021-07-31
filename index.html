@@ -179,9 +179,10 @@
             <h3>制作 第一节 前言</h3>
         </div>
         <div class="day complete card" id="note-30">
-            <h1><embed src="img/frontendlogo.svg"></h1>
+            <h1><embed src="img/cnflogo.svg"></h1>
             <h2>7 月 30 日 9:00 - 11:00</h2>
-            <h3>1 搭起框架</h3>
+            <h3>讨论 字幕机</h3>
+            <a href="https://github.com/LogCreative/manim-subtitler" target="_blank"><p class="page complete link">manim-subtitler</p></a>
         </div>
     </div>
     </body>
@@ -202,18 +203,29 @@
         var start = 19;
         var pass = (new Date()).getDate();
         var end = 31;
-        var notice = "Phase 1 Release";
         var cal = document.getElementById('calendar');
-        for (var i = start; i <= end + 1; ++i) {
+        for (var i = start; i <= end; ++i) {
             var d = document.createElement('div');
             d.className = 'day';
-            if (i <= pass) d.className += ' complete';
-            d.innerHTML = i <= end ? String(i) : notice;
+            // if (i <= pass) 
+            d.className += ' complete';
+            d.innerHTML = String(i);
             d.addEventListener("click", details);
             if(document.querySelector("#schedule #note-"+i))
                 d.className += ' sched';
             cal.appendChild(d);
         }
-        
+        cal.appendChild(document.createElement('br'));
+        for (var i = 1; i <= 10; ++i) {
+            var d = document.createElement('div');
+            d.className = 'day';
+            if (i <= pass) 
+                d.className += ' complete';
+            d.innerHTML = String(i);
+            d.addEventListener("click", details);
+            if(document.querySelector("#schedule #note-"+i))
+                d.className += ' sched';
+            cal.appendChild(d);
+        }
     </script>
 </html>
